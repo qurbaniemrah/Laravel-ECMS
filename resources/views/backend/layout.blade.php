@@ -148,7 +148,8 @@ desired effect
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MENULER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="nedmin"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
+        <li class="active"><a href="{{route('nedmin.Index')}}"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
+        <li><a href="{{route('settings.Index')}}"><i class="fa fa-cog"></i> <span>Ayarlar</span></a></li>
       
 
 

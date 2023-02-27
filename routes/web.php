@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\DefaultController;
+use App\Http\Controllers\Backend\SettingsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('nedmin',[DefaultController::class,'index']);
+Route::get('nedmin',[DefaultController::class,'index'])->name('nedmin.Index');
+Route::get('nedmin/settings',[SettingsController::class,'index'])->name('settings.Index');
+
 
 
 
