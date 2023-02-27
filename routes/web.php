@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\DefaultController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +18,10 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('nedmin','Backend\DefaultController@index');
+Route::get('nedmin',[DefaultController::class,'index']);
+
+
+
+
+
+

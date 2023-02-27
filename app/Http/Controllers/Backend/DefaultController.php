@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class DefaultController extends Controller
 {
-    public function index() {
+    public function index() 
+    {
         return view('backend.default.index');
     }
 }
