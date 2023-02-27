@@ -15,7 +15,24 @@
           <h3 class="box-title">Settings</h3>
         </div>
         <div class="box-body">
-          <p>Ayarlar Sayfasi</p>
+          <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Açıklama</th>
+                    <th>İçerik</th>
+                    <th>Anahtar Değer</th>
+                    <th></th>
+                </tr>
+                <tbody>
+                    <tr>
+                    <td>Açıklama</td>
+                    <td>İçerik</td>
+                    <td>Anahtar Değer</td>
+                    <td>Button</td>
+                    </tr>
+                </tbody>
+            </thead>
+          </table>
         </div>
       </div>
     </section>
