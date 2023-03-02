@@ -17,4 +17,15 @@ class SettingsController extends Controller
         // dd($data);
         return view('backend.settings.index',compact('data'));
     }
+
+    public function sortable () {
+        // print_r($_POST['item']);
+        foreach ($_POST['item'] as $key => $value) {
+$settings=Settings::find(intval($value));
+$settings->settings_must=intval($key);
+$settings->save();
+        }
+        echo true;
+
+    }
 }

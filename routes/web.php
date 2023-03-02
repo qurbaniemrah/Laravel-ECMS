@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('nedmin',[DefaultController::class,'index'])->name('nedmin.Index');
 Route::get('nedmin/settings',[SettingsController::class,'index'])->name('settings.Index');
+Route::post('nedmin/sortable',[SettingsController::class,'sortable'])->name('settings.Sortable');
 
 
 
