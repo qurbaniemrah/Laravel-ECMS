@@ -31,6 +31,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="/backend/dist/js/adminlte.min.js"></script>
 
+<!-- JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -159,7 +172,7 @@ desired effect
         <li class="header">MENULER</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="{{route('nedmin.Index')}}"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
-        <li><a href="{{route('settings.Index')}}"><i class="fa fa-cog"></i> <span>Ayarlar</span></a></li>
+        <li><a href="{{route('settings.Index',['id'=>$settings->id])}}"><i class="fa fa-cog"></i> <span>Ayarlar</span></a></li>
       
 
 
@@ -233,5 +246,14 @@ desired effect
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
+
+@if(session()->has('success'))
+<script>alertify.success('{{session('success')}}')</script>
+@endif
+
+@if(session()->has('success'))
+<script>alertify.error('{{session('error')}}')</script>
+@endif
+
 </body>
 </html>

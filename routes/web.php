@@ -19,9 +19,14 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('nedmin',[DefaultController::class,'index'])->name('nedmin.Index');
-Route::get('nedmin/settings',[SettingsController::class,'index'])->name('settings.Index');
-Route::post('nedmin/sortable',[SettingsController::class,'sortable'])->name('settings.Sortable');
+Route::get('nedmin',[DefaultController::class, 'index'])->name('nedmin.Index');
+
+
+Route::get('nedmin/settings', [SettingsController::class, 'index'])->name('settings.Index');
+Route::post('nedmin/sortable', [SettingsController::class, 'sortable'])->name('settings.Sortable');
+Route::get('nedmin/settings/delete/{id}',[SettingsController::class, 'destroy'])->name('settings.Destroy');
+
+?>
 
 
 

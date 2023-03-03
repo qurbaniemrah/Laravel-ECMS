@@ -35,7 +35,11 @@
                     <td>{{$adminSettings->settings_key}}</td>
                     <td>{{$adminSettings->settings_type}}</td>
                     <td width="5"><a href="javascript:void(0)"><i class="fa fa-pencil-square"></i></a></td>
-                    <td width="5"><a href="javascript:void(0)"><i class="fa fa-trash-o"></i></a></td>
+                    <td width="5">
+                      @if ($adminSettings->settings_delete)
+                      <a href="javascript:void(0)"><i id="@php echo $adminSettings->id @endphp" class="fa fa-trash-o"></i></a>
+                      @endif
+                    </td>
                   </tr>
                   @endforeach
                 </tbody>
@@ -66,9 +70,9 @@ $('#sortable').sortable({
             success: function (msg) {
                 // console.log(msg);
                 if (msg) {
-                    alert("işlem başarılı");
+                    alertify.succes("Islem Basarili");
                 } else {
-                    alert("işlem başarısız");
+                  alertify.error("Islem Basarisiz");
                 }
             }
         });
@@ -79,6 +83,18 @@ $('#sortable').disableSelection();
 
 });
 
+$(".fa-trash-o").click(function () {
+  destroy_id=$(this).attr('id');
+  alertify.confirm('Silme islemini onaylayin!', 'Bu islem geri alinamaz',
+  function () {
+location.href="/nedmin/settings/delete/" + destroy_id;
+  },
+
+  function () {
+    alertify.error('Silme islemi iptal edildi');
+  }
+  )
+});
 
 
 </script>
